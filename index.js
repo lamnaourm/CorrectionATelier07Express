@@ -12,7 +12,7 @@ app.use(cors());
 const port = process.env.PORT || 3000;
 const url = process.env.URL_MONGOOSE;
 
-mongoose.connect(url).then(()=> {
+mongoose.connect(url, {useNewUrlParser: true}).then(()=> {
     console.log('Connexion BD resussie')
 }).catch((error) => {
     console.log('erreur de connexion ', error); 
